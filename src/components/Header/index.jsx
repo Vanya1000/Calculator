@@ -1,6 +1,7 @@
 import React from 'react'
 import { 
   StyledHeader, 
+  StyledContainer,
   StyledTitle,  
   StyledUl, 
   StyledLi, 
@@ -25,17 +26,19 @@ const path = [
 const Header = () => {
   return (
     <StyledHeader>
-      <StyledTitle>
-        Calculator App
-      </StyledTitle>
-        <StyledUl>
-          {path.map(({ path, name }) => (
-              <StyledLi key={path}>
-                <StyledRouterLink to={path}>{name}</StyledRouterLink>
-              </StyledLi>
-            )
-          )}
-        </StyledUl>
+      <StyledContainer>
+        <StyledTitle>
+          Calculator App
+        </StyledTitle>
+          <StyledUl>
+            {path.map(({ path, name }) => (
+                <StyledLi key={path}>
+                  <StyledRouterLink to={path}>{name}</StyledRouterLink>
+                </StyledLi>
+              )
+            )}
+          </StyledUl>
+        </StyledContainer>
     </StyledHeader>
   )
 }

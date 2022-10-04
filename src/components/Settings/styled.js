@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const StyledWrapper = styled.div`
   width: 200px;
+  color: ${props => props.theme.palette.text.primary};
 `
 
 export const StyledTitle = styled.h1`
@@ -38,8 +39,10 @@ export const StyledButton = styled.button`
   font-size: 16px;
   &:hover {
     cursor: pointer;
-    background-color: #ccc;
+    background-color: ${props => props.theme.palette.button.primary};
   }
-  
+  &:active {
+    opacity: 0.8;
+  }
 `
 

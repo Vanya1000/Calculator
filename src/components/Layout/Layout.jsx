@@ -6,7 +6,7 @@ import GlobalStyles from '@/globalStyles';
 
 import { lightTheme, darkTheme, coloredTheme } from '../../theme/theme';
 import Header from '../Header';
-import { StyledWrapper } from './styled';
+import { StyledContainer } from './styled';
 
 
 
@@ -29,9 +29,9 @@ const Layout = () => {
     <ThemeProvider theme={chooseCurrentTheme} >
       <GlobalStyles />
       <Header />
-      <StyledWrapper>
+      <StyledContainer>
         <Outlet />
-      </StyledWrapper>
+      </StyledContainer>
     </ThemeProvider>
   )
 }

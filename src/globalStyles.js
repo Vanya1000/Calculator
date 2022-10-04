@@ -14,6 +14,6 @@ export default createGlobalStyle`
     width: 100%;
     height: 100vh;
     font-family: ${theme.font};
-    background: ${props => props.theme.background.primary};
+    background: ${props => props.theme.palette.background.primary};
   }
 `

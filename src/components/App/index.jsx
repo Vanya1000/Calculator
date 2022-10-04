@@ -1,13 +1,10 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import CalculatorFC from '../Calculator'
 import Layout from '../Layout/Layout'
 import Settings from '../Settings'
 
-const CalculatorFCPage = () => {
-  return (
-    <div>CalculatorFC</div>
-  )
-}
+
 
 const CalculatorCCPage = () => {
   return (
@@ -26,7 +23,7 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<CalculatorFCPage />} />
+        <Route index element={<CalculatorFC />} />
         <Route path="homecc" element={<CalculatorCCPage />} />
         <Route path="settings" element={<Settings />} />
         <Route path="*" element={<NotFound />} />

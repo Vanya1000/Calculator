@@ -4,12 +4,19 @@ import styled from "styled-components"
 
 
 export const StyledHeader = styled.header`
-  background-color: ${props => props.theme.headerBgColor.primary};
-  color: ${props => props.theme.headerColor.primary};
+  background-color: ${props => props.theme.palette.background.secondary};
+  color: ${props => props.theme.palette.text.secondary};
+  
+`
+
+export const StyledContainer = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
   display: flex;
   justify-content: space-between;
 `
+
 export const StyledTitle = styled.p`
   font-size: 20px;
 `
@@ -22,12 +29,12 @@ export const StyledLi = styled.li`
   margin-left: 20px;
   &:hover {
     cursor: pointer;
-    border-bottom: 1px solid ${props => props.theme.headerColor.primary};
+    border-bottom: 1px solid ${props => props.theme.palette.text.secondary};
   }
   
 `
 
 export const StyledRouterLink = styled(NavLink)`
-  color: ${props => props.theme.headerColor.primary};
+  color: ${props => props.theme.palette.text.secondary};
   text-decoration: none;
 `
