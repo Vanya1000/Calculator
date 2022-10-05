@@ -4,7 +4,7 @@ export const StyledKeypadWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 100px);
   justify-content: space-between;
-  grid-template-rows: repeat(4, 100px);
+  grid-template-rows: repeat(5, 100px);
   grid-gap: 20px;
   margin: 20px 50px 0 50px;
 `
