@@ -6,7 +6,8 @@ import {
   setDisplay, 
   clearLastNumber, 
   clearDisplay, 
-  calculate
+  calculate,
+  clearError
 } from '@/store/slice/calculatorSlice'
 
 const btn = [
@@ -19,18 +20,19 @@ const btn = [
 class KeypadCC extends React.Component {
 
   handleClick = (v) => () => {
-      switch (v) {
-        case '=':
-          this.props.calculate();
-          break
-        case 'C':
-          this.props.clearDisplay()
-          break
-        case '←':
-          this.props.clearLastNumber()
-          break
-        default:
-          this.props.setDisplay(v)
+    this.props.clearError();
+    switch (v) {
+      case '=':
+        this.props.calculate();
+        break
+      case 'C':
+        this.props.clearDisplay()
+        break
+      case '←':
+        this.props.clearLastNumber()
+        break
+      default:
+        this.props.setDisplay(v)
     }
   }
 
@@ -52,11 +54,13 @@ KeypadCC.propTypes = {
   clearLastNumber: PropTypes.func,
   clearDisplay: PropTypes.func,
   calculate: PropTypes.func,
+  clearError: PropTypes.func
 }
 
 export default connect(null, {
   setDisplay, 
   clearLastNumber, 
   clearDisplay, 
-  calculate
+  calculate,
+  clearError,
 })(KeypadCC)

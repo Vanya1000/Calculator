@@ -1,6 +1,6 @@
 export const calculateExpression = (str) => {
-  str = str.replace(/\.(\d)/g, '0.$1');//?
-  const arr = str.split(/(\d+\.?\d*|\+|\*|\(|\))/).filter((item) => item !== '');
+  const replaceStr = str.replace(/\.(\d)/g, '0.$1');
+  const arr = replaceStr.split(/(\d+\.?\d*|\+|\*|\(|\))/).filter((item) => item !== '');
   const stackNumbers = []
   const stackOperators = []
   const priority = {
@@ -53,13 +53,18 @@ export const calculateExpression = (str) => {
     const operator = stackOperators.pop();
     stackNumbers.push(calculate(a, b, operator));
   }
-  const result = String(Number.isInteger(stackNumbers[0]) ? stackNumbers[0] : stackNumbers[0].toFixed(2)); 
+  let result = String(Number.isInteger(stackNumbers[0]) ? stackNumbers[0] : stackNumbers[0].toFixed(3)); 
+
+  if (isNaN(result)) {
+    result = 'Error'
+  }
+  
   const history = `${str} = ${result}`//?
   return [result, history];
 }
 
 export const checkValue = (str) => {
-  const isCheckNum = !!str.match(/(.?\d+\.?\d*)(\+|\-|\*|\/)(.?\d+\.?\d*)/)
+  const isCheckNum = str.match(/(.?\d+\.?\d*)(\+|\-|\*|\/)(.?\d+\.?\d*)/)
   const arr = str.split('');
   const stack = [];
   for (let i = 0; i < arr.length; i++) {
@@ -76,8 +81,9 @@ export const checkValue = (str) => {
 }
 
 export const validateInput = (display, s) => {
+  const allString = display + s;
   if (display === '') {
     return ['*', '/', '+', '-', ')'].indexOf(s) === -1;
   }
-  return !(display+s).match(/(\+|\.|\-|\*|\/){2,}/);
+  return !allString.match(/(\+|\-|\*|\/){2,}|\.{2,}/)
 }

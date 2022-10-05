@@ -5,6 +5,7 @@ const initialState = {
   display: '',
   history: [],
   isShouldClear: false,
+  isError: false,
 }
 
 export const calculatorSlice = createSlice({
@@ -37,14 +38,24 @@ export const calculatorSlice = createSlice({
         state.display = result
         state.history.push(history)
         state.isShouldClear = true
+      } else {
+        state.isError = true
       }
     },
     clearHistory: (state) => {
+      state.display = ''
+      state.isError = false
+      state.isShouldClear = false
       state.history = []
     },
+    clearError: (state, action) => {
+      if (state.isError) {
+        state.isError = false
+      }
+    }
   }
 })
 
-export const { setDisplay, clearLastNumber, clearDisplay, calculate, clearHistory } = calculatorSlice.actions
+export const { setDisplay, clearLastNumber, clearDisplay, calculate, clearHistory, clearError } = calculatorSlice.actions
 
 export default calculatorSlice.reducer

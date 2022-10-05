@@ -7,6 +7,7 @@ import GlobalStyles from '@/globalStyles';
 import { lightTheme, darkTheme, coloredTheme } from '../../theme/theme';
 import Header from '../Header';
 import { StyledContainer } from './styled';
+import ErrorBoundary from '@/HOC/ErrorBoundary';
 
 
 
@@ -30,7 +31,9 @@ const Layout = () => {
       <GlobalStyles />
       <Header />
       <StyledContainer>
-        <Outlet />
+        <ErrorBoundary>
+          <Outlet />
+        </ErrorBoundary>
       </StyledContainer>
     </ThemeProvider>
   )

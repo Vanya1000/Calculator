@@ -4,7 +4,8 @@ import {
   setDisplay, 
   clearLastNumber, 
   clearDisplay, 
-  calculate
+  calculate,
+  clearError
 } from '@/store/slice/calculatorSlice'
 import { StyledKeypadWrapper, StyledButton } from './styled'
 
@@ -19,6 +20,7 @@ const KeypadFC = () => {
   const dispatch = useDispatch();
 
   const handleClick = (v) => () => {
+    dispatch(clearError())
       switch (v) {
         case '=':
           dispatch(calculate())
