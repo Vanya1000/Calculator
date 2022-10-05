@@ -1,9 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { calculateExpression, checkValue, validateInput } from '@/auxiliaryFn/auxiliaryFn'
 
-
-
-
 const initialState = {
   display: '',
   history: [],
