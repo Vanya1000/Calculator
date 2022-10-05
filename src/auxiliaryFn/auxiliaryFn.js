@@ -53,7 +53,7 @@ export const calculateExpression = (str) => {
     const operator = stackOperators.pop();
     stackNumbers.push(calculate(a, b, operator));
   }
-  const result = Number.isInteger(stackNumbers[0]) ? stackNumbers[0] : stackNumbers[0].toFixed(2); 
+  const result = String(Number.isInteger(stackNumbers[0]) ? stackNumbers[0] : stackNumbers[0].toFixed(2)); 
   const history = `${str} = ${result}`//?
   return [result, history];
 }

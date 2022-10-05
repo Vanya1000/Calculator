@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import { StyledKeypadWrapper, StyledButton } from './styled'
 import { 
@@ -44,6 +45,13 @@ class KeypadCC extends React.Component {
       </StyledKeypadWrapper>
     )
   }
+}
+
+KeypadCC.propTypes = {
+  setDisplay: PropTypes.func,
+  clearLastNumber: PropTypes.func,
+  clearDisplay: PropTypes.func,
+  calculate: PropTypes.func,
 }
 
 export default connect(null, {

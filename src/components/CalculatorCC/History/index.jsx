@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import { StyledHistoryWrapper, StyledHistoryList, StyledTitle, StyledHistotyItem } from './styled'
 
@@ -23,5 +24,9 @@ class HistoryCC extends React.Component {
 const mapStateToProps = (state) => ({
   history: state.calculator.history,
 });
+
+HistoryCC.propTypes = {
+  history: PropTypes.array
+}
 
 export default connect(mapStateToProps)(HistoryCC)
