@@ -8,8 +8,8 @@ class DisplayCC extends React.PureComponent {
   render() {
     return (
       <StyledDisplayWrapper>
-        <StyledError isError={this.props.isError}>Error! Please, check input</StyledError>
-        <StyledResult>
+        <StyledError data-cy="error" isError={this.props.isError}>Error! Please, check input</StyledError>
+        <StyledResult data-cy="display">
           {this.props.display || '0'}
         </StyledResult>
       </StyledDisplayWrapper>

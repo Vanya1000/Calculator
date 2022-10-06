@@ -39,7 +39,7 @@ const KeypadFC = () => {
   return (
     <StyledKeypadWrapper>
       {btn.map((value) => (
-          <StyledButton onClick={handleClick(value)} key={value}>
+          <StyledButton data-cy={value} onClick={handleClick(value)} key={value}>
             {value}
           </StyledButton>
       ))}

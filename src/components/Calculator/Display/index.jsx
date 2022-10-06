@@ -7,8 +7,8 @@ const DisplayFC = () => {
   const isError = useSelector(state => state.calculator.isError)
   return (
     <StyledDisplayWrapper>
-      <StyledError isError={isError}>Error! Please, check input</StyledError>
-      <StyledResult>
+      <StyledError data-cy="error" isError={isError}>Error! Please, check input</StyledError>
+      <StyledResult data-cy="display">
         {display || '0'}
       </StyledResult>
     </StyledDisplayWrapper>

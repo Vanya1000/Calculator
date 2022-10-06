@@ -9,7 +9,7 @@ class HistoryCC extends React.Component {
       return (
         <StyledHistoryWrapper>
           <StyledTitle>History</StyledTitle>
-          <StyledHistoryList>
+          <StyledHistoryList data-cy="history">
             {this.props.history.map((item, index) => (
               <StyledHistotyItem key={index}>
                 {item}

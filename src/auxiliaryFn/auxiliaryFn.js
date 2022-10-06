@@ -1,5 +1,5 @@
 export const calculateExpression = (str) => {
-  const replaceStr = str.replace(/\.(\d)/g, '0.$1');
+  const replaceStr = str.replace(/(?<!\d)\./g, '0.');
   const arr = replaceStr.split(/(\d+\.?\d*|\+|\*|\(|\))/).filter((item) => item !== '');
   const stackNumbers = []
   const stackOperators = []
@@ -55,7 +55,7 @@ export const calculateExpression = (str) => {
   }
   let result = String(Number.isInteger(stackNumbers[0]) ? stackNumbers[0] : stackNumbers[0].toFixed(3)); 
 
-  if (isNaN(result)) {
+  if (isNaN(result) || result === 'Infinity') {
     result = 'Error'
   }
   
