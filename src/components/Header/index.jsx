@@ -1,4 +1,6 @@
 import React from 'react'
+import { PATH_PAGE } from '@/routes/path'
+
 import { 
   StyledHeader, 
   StyledContainer,
@@ -10,15 +12,15 @@ import {
 
 const path = [
   {
-    path: '/',
+    path: PATH_PAGE.homeFC,
     name: 'Home(FC)',
   },
   {
-    path: '/homecc',
+    path: PATH_PAGE.homeCC,
     name: 'Home(CC)',
   },
   {
-    path: '/settings',
+    path: PATH_PAGE.settings,
     name: 'Settings',
   }
 ]
