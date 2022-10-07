@@ -1,22 +1,22 @@
 import React from "react";
-import DisplayFC from "./Display";
-import HistoryFC from "./History";
-import KeypadFC from "./Keypad";
 
 import { StyledFlexContainer, StyledCalculatorWrapper } from "./styled";
+import DisplayCC from "./Display";
+import HistoryCC from "./History";
+import KeypadCC from "./Keypad";
 
-class CalculatorСC extends React.Component {
+class CalculatorCC extends React.Component {
   render() {
     return (
       <StyledFlexContainer>
         <StyledCalculatorWrapper>
-          <DisplayFC />
-          <KeypadFC />
+          <DisplayCC />
+          <KeypadCC />
         </StyledCalculatorWrapper>
-        <HistoryFC />
+        <HistoryCC />
       </StyledFlexContainer>
     );
   }
 }
 
-export default CalculatorСC;
+export default CalculatorCC;

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+
 import { StyledHistoryWrapper, StyledHistoryList, StyledTitle, StyledHistotyItem } from './styled'
 
 const HistoryFC = () => {
@@ -12,7 +13,7 @@ const HistoryFC = () => {
       </StyledTitle>
       <StyledHistoryList data-cy="history">
       {history.map((item, index) => (
-        <StyledHistotyItem key={index}>
+        <StyledHistotyItem key={`${index}-key`}>
           {item}
         </StyledHistotyItem>
       ))}

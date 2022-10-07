@@ -1,5 +1,8 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+
+
+import { StyledKeypadWrapper, StyledButton } from './styled'
 import { 
   setDisplay, 
   clearLastNumber, 
@@ -7,7 +10,6 @@ import {
   calculate,
   clearError
 } from '@/store/slice/calculatorSlice'
-import { StyledKeypadWrapper, StyledButton } from './styled'
 
 const btn = [
   'C', 7, 8, 9, '*', 
@@ -39,7 +41,7 @@ const KeypadFC = () => {
   return (
     <StyledKeypadWrapper>
       {btn.map((value) => (
-          <StyledButton data-cy={value} onClick={handleClick(value)} key={value}>
+          <StyledButton data-cy={value} onClick={handleClick(value)} key={`${value}-key`}>
             {value}
           </StyledButton>
       ))}

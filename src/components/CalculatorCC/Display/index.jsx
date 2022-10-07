@@ -1,16 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+
 import { StyledDisplayWrapper, StyledError, StyledResult } from './styled'
 
 
-class DisplayCC extends React.PureComponent {
+class DisplayCC extends React.Component {
   render() {
+    const { isError, display } = this.props;
     return (
       <StyledDisplayWrapper>
-        <StyledError data-cy="error" isError={this.props.isError}>Error! Please, check input</StyledError>
+        <StyledError data-cy="error" isError={isError}>Error! Please, check input</StyledError>
         <StyledResult data-cy="display">
-          {this.props.display || '0'}
+          {display || '0'}
         </StyledResult>
       </StyledDisplayWrapper>
     )

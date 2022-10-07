@@ -40,7 +40,7 @@ class KeypadCC extends React.Component {
     return (
       <StyledKeypadWrapper>
         {btn.map((value) => (
-            <StyledButton data-cy={value} onClick={this.handleClick(value)} key={value}>
+            <StyledButton data-cy={value} onClick={this.handleClick(value)} key={`${value}-key`}>
               {value}
             </StyledButton>
         ))}

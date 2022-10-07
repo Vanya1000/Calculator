@@ -1,5 +1,4 @@
 import React from 'react'
-import { PATH_PAGE } from '@/routes/path'
 
 import { 
   StyledHeader, 
@@ -9,6 +8,7 @@ import {
   StyledLi, 
   StyledRouterLink 
 } from './styled'
+import { PATH_PAGE } from '@/routes/path'
 
 const path = [
   {

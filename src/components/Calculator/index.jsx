@@ -1,8 +1,9 @@
 import React from 'react'
+
+import { StyledFlexContainer, StyledCalculatorWrapper } from './styled'
 import DisplayFC from './Display'
 import HistoryFC from './History'
 import KeypadFC from './Keypad'
-import { StyledFlexContainer, StyledCalculatorWrapper } from './styled'
 
 const CalculatorFC = () => {
   return (

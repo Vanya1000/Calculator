@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { calculateExpression, checkValue, validateInput } from '@/auxiliaryFn/auxiliaryFn'
+import { calculateExpression, checkValue, validateInput } from '@/utils/auxiliaryFn/auxiliaryFn'
 
 const initialState = {
   display: '',
