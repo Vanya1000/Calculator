@@ -1,23 +1,23 @@
 import styled from "styled-components"
 
-export const StyledDisplayWrapper = styled.div`
+export const DisplayWrapper = styled.div`
   position: relative;
-  padding: 20px;
+  padding: ${(prop) => prop.theme.spacing.double};
   border-bottom: 1px solid ${props => props.theme.palette.text.primary};
-  margin: 0 10px;
+  margin: 0 ${(prop) => prop.theme.spacing.single};
   display: flex;
   justify-content: flex-end;
 `
 
-export const StyledError = styled.p`
+export const Error = styled.p`
   position: absolute;
-  display: ${props => props.isError ? 'block' : 'none'};
-  left: 20px;
-  padding-right: 5px;
-  color: #ff0000;
+  display: ${({isError}) => isError ? 'block' : 'none'};
+  left: ${(prop) => prop.theme.spacing.double};
+  padding-right: ${(prop) => prop.theme.spacing.half};
+  color: ${props => props.theme.colors.ERROR};
 `
 
-export const StyledResult = styled.p`
+export const Result = styled.p`
   font-size: 30px;
-  padding-right: 30px;
+  padding-right: ${(prop) => prop.theme.spacing.triple};
 `

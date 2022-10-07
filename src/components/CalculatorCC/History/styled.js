@@ -1,22 +1,22 @@
 import styled from "styled-components"
 
-export const StyledHistoryWrapper = styled.div`
+export const HistoryWrapper = styled.div`
   width: 300px;
   border-left: 1px solid ${props => props.theme.palette.text.primary};
   display: flex;
   flex-direction: column;
 `
 
-export const StyledTitle = styled.p`
+export const Title = styled.p`
   font-size: 20px;
   margin: 0 auto;
-  margin-bottom: 10px;
+  margin-bottom: ${(prop) => prop.theme.spacing.single};
 `
-export const StyledHistoryList = styled.div`
+export const HistoryList = styled.div`
   display: flex;
   flex-direction: column;
   height: 85vh;
-  padding: 0 20px;
+  padding: 0 ${(prop) => prop.theme.spacing.double};
   overflow: auto;
   &::-webkit-scrollbar-thumb {
     background-color: gray;
@@ -29,7 +29,7 @@ export const StyledHistoryList = styled.div`
   }
 `
 
-export const StyledHistotyItem = styled.p`
+export const HistotyItem = styled.p`
   font-size: 20px;
-  padding: 10px 0;
+  padding: ${(prop) => prop.theme.spacing.single} 0;
 `

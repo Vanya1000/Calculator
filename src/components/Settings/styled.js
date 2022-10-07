@@ -7,12 +7,12 @@ export const StyledWrapper = styled.div`
 
 export const StyledTitle = styled.h1`
   font-weight: 300;
-  margin-top: 20px;
+  margin-top: ${(prop) => prop.theme.spacing.double};
 `
 
 export const StyledSelect = styled.select`
-  margin-top: 20px;
-  padding: 15px;
+  margin-top: ${(prop) => prop.theme.spacing.double};
+  padding: ${(prop) => prop.theme.spacing.single};
   width: 100%;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -20,7 +20,7 @@ export const StyledSelect = styled.select`
   cursor: pointer;
   &:focus {
     outline: none;
-    border-color: #000000;
+    border-color: ${(prop) => prop.theme.colors.BLACK};
   }
 `
 
@@ -30,8 +30,8 @@ export const StyledOption = styled.option`
 
 export const StyledButton = styled.button`
   display: block;
-  margin-top: 20px;
-  padding: 15px;
+  margin-top: ${(prop) => prop.theme.spacing.double};
+  padding: ${(prop) => prop.theme.spacing.single};
   width: 100%;
   border: 1px solid #ccc;
   border-radius: 5px;

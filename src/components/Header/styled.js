@@ -12,13 +12,13 @@ export const StyledHeader = styled.header`
 export const StyledContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: ${(prop) => prop.theme.spacing.double};
   display: flex;
   justify-content: space-between;
 `
 
 export const StyledTitle = styled.p`
-  font-size: 20px;
+  font-size: ${(prop) => prop.theme.spacing.double};
 `
 
 export const StyledUl = styled.ul`
@@ -26,7 +26,7 @@ export const StyledUl = styled.ul`
 `
 export const StyledLi = styled.li`
   list-style: none; 
-  margin-left: 20px;
+  margin-left: ${(prop) => prop.theme.spacing.double};
   &:hover {
     cursor: pointer;
     border-bottom: 1px solid ${props => props.theme.palette.text.secondary};

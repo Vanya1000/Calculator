@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 
 
-import { StyledKeypadWrapper, StyledButton } from './styled'
+import * as Styled from './styled'
 import { 
   setDisplay, 
   clearLastNumber, 
@@ -39,13 +39,13 @@ const KeypadFC = () => {
   }
 
   return (
-    <StyledKeypadWrapper>
+    <Styled.KeypadWrapper>
       {btn.map((value) => (
-          <StyledButton data-cy={value} onClick={handleClick(value)} key={`${value}-key`}>
+          <Styled.Button data-cy={value} onClick={handleClick(value)} key={`${value}-key`}>
             {value}
-          </StyledButton>
+          </Styled.Button>
       ))}
-    </StyledKeypadWrapper>
+    </Styled.KeypadWrapper>
   )
 }
 

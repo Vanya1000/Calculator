@@ -2,22 +2,22 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import { StyledHistoryWrapper, StyledHistoryList, StyledTitle, StyledHistotyItem } from './styled'
+import * as Styled from './styled'
 
 class HistoryCC extends React.Component {
     render() {
         const { history } = this.props;
       return (
-        <StyledHistoryWrapper>
-          <StyledTitle>History</StyledTitle>
-          <StyledHistoryList data-cy="history">
+        <Styled.HistoryWrapper>
+          <Styled.Title>History</Styled.Title>
+          <Styled.HistoryList data-cy="history">
             {history.map((item, index) => (
-              <StyledHistotyItem key={`${index}-key`}>
+              <Styled.HistotyItem key={`${index}-key`}>
                 {item}
-              </StyledHistotyItem>
+              </Styled.HistotyItem>
             ))}
-          </StyledHistoryList>
-        </StyledHistoryWrapper>
+          </Styled.HistoryList>
+        </Styled.HistoryWrapper>
       )
     }
 }

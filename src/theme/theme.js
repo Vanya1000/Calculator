@@ -1,32 +1,25 @@
-
-const DARK_GRAY = '#333333';
-const MEDIUM_GRAY = '#bdbdbd';
-const LIGHT_GRAY = '#f5f5f5';
-const WHITE = '#ffffff';
-const BLACK = '#000000';
-const CORAL_LIGHT = '#ff7961';
-const CORAL_MEDIUM = '#f44336';
-const AQUAMARINE = '#00897b';
-
-const font = 'Roboto, sans-serif';
+import colors from "./colors";
+import spacing from "./spacing";
 
 const theme = {
-
+  font: 'Inter, sans-serif',
+  colors,
+  spacing,
 }
 
 export const lightTheme = {
   ...theme,
   palette: {
     background: {
-      primary: LIGHT_GRAY,
-      secondary: DARK_GRAY,
+      primary: colors.LIGHT_GRAY,
+      secondary: colors.DARK_GRAY,
     },
     text: {
-      primary: BLACK,
-      secondary: WHITE,
+      primary: colors.BLACK,
+      secondary: colors.WHITE,
     },
     button: {
-      primary: MEDIUM_GRAY,
+      primary: colors.MEDIUM_GRAY,
     }
   }
 }
@@ -35,15 +28,15 @@ export const darkTheme = {
   ...theme,
   palette: {
     background: {
-      primary: DARK_GRAY,
-      secondary: BLACK,
+      primary: colors.DARK_GRAY,
+      secondary: colors.BLACK,
     },
     text: {
-      primary: WHITE,
-      secondary: WHITE,
+      primary: colors.WHITE,
+      secondary: colors.WHITE,
     },
     button: {
-      primary: MEDIUM_GRAY,
+      primary: colors.MEDIUM_GRAY,
     }
   }
 }
@@ -52,19 +45,15 @@ export const coloredTheme = {
   ...theme,
   palette: {
     background: {
-      primary: LIGHT_GRAY,
-      secondary: AQUAMARINE,
+      primary: colors.LIGHT_GRAY,
+      secondary: colors.AQUAMARINE,
     },
     text: {
-      primary: CORAL_LIGHT,
-      secondary: WHITE,
+      primary: colors.CORAL_LIGHT,
+      secondary: colors.WHITE,
     },
     button: {
-      primary: CORAL_LIGHT,
+      primary: colors.CORAL_LIGHT,
     }
   }
-}
-
-export default {
-  font
 }

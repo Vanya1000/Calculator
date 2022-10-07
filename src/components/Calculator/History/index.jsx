@@ -1,24 +1,24 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 
-import { StyledHistoryWrapper, StyledHistoryList, StyledTitle, StyledHistotyItem } from './styled'
+import * as Styled from './styled'
 
 const HistoryFC = () => {
   const history = useSelector((state) => state.calculator.history);
 
   return (
-    <StyledHistoryWrapper>
-      <StyledTitle>
+    <Styled.HistoryWrapper>
+      <Styled.Title>
         History
-      </StyledTitle>
-      <StyledHistoryList data-cy="history">
+      </Styled.Title>
+      <Styled.HistoryList data-cy="history">
       {history.map((item, index) => (
-        <StyledHistotyItem key={`${index}-key`}>
+        <Styled.HistotyItem key={`${index}-key`}>
           {item}
-        </StyledHistotyItem>
+        </Styled.HistotyItem>
       ))}
-      </StyledHistoryList>
-    </StyledHistoryWrapper>
+      </Styled.HistoryList>
+    </Styled.HistoryWrapper>
   )
 }
 

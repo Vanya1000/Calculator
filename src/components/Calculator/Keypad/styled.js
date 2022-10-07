@@ -1,12 +1,12 @@
 import styled, { keyframes } from "styled-components"
 
-export const StyledKeypadWrapper = styled.div`
+export const KeypadWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 100px);
   justify-content: space-between;
   grid-template-rows: repeat(5, 100px);
-  grid-gap: 20px;
-  margin: 20px 50px 0 50px;
+  grid-gap: ${(prop) => prop.theme.spacing.double};
+  margin: ${(prop) => prop.theme.spacing.double} ${(prop) => prop.theme.spacing.quintuple} 0 ${(prop) => prop.theme.spacing.quintuple};
 `
 
 const push = keyframes`
@@ -17,17 +17,8 @@ const push = keyframes`
 		border-radius: 50px;
 	}
 `
-const up = keyframes`
-  0% {
-		border-radius: 50px;
-	}
 
-	100% {
-		border-radius: 10px;
-	}
-`
-
-export const StyledButton = styled.button`
+export const Button = styled.button`
   border: 1px solid ${props => props.theme.palette.text.primary};
   border-radius: 10px;
   font-size: 30px;

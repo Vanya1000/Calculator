@@ -1,6 +1,6 @@
 import React from "react";
 
-import { StyledFlexContainer, StyledCalculatorWrapper } from "./styled";
+import * as Styled from './styled'
 import DisplayCC from "./Display";
 import HistoryCC from "./History";
 import KeypadCC from "./Keypad";
@@ -8,13 +8,13 @@ import KeypadCC from "./Keypad";
 class CalculatorCC extends React.Component {
   render() {
     return (
-      <StyledFlexContainer>
-        <StyledCalculatorWrapper>
+      <Styled.FlexContainer>
+        <Styled.CalculatorWrapper>
           <DisplayCC />
           <KeypadCC />
-        </StyledCalculatorWrapper>
+        </Styled.CalculatorWrapper>
         <HistoryCC />
-      </StyledFlexContainer>
+      </Styled.FlexContainer>
     );
   }
 }

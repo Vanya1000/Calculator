@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import { StyledKeypadWrapper, StyledButton } from './styled'
+import * as Styled from './styled'
 import { 
   setDisplay, 
   clearLastNumber, 
@@ -38,13 +38,13 @@ class KeypadCC extends React.Component {
 
   render() {
     return (
-      <StyledKeypadWrapper>
+      <Styled.KeypadWrapper>
         {btn.map((value) => (
-            <StyledButton data-cy={value} onClick={this.handleClick(value)} key={`${value}-key`}>
+            <Styled.Button data-cy={value} onClick={this.handleClick(value)} key={`${value}-key`}>
               {value}
-            </StyledButton>
+            </Styled.Button>
         ))}
-      </StyledKeypadWrapper>
+      </Styled.KeypadWrapper>
     )
   }
 }

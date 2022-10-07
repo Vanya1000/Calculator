@@ -1,19 +1,19 @@
 import React from 'react'
 
-import { StyledFlexContainer, StyledCalculatorWrapper } from './styled'
+import * as Styled from './styled'
 import DisplayFC from './Display'
 import HistoryFC from './History'
 import KeypadFC from './Keypad'
 
 const CalculatorFC = () => {
   return (
-    <StyledFlexContainer>
-      <StyledCalculatorWrapper>
+    <Styled.FlexContainer>
+      <Styled.CalculatorWrapper>
         <DisplayFC />
         <KeypadFC />
-      </StyledCalculatorWrapper>
+      </Styled.CalculatorWrapper>
       <HistoryFC/>
-    </StyledFlexContainer>
+    </Styled.FlexContainer>
   )
 }
 
