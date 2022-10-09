@@ -1,8 +1,8 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 
-
 import * as Styled from './styled'
+import { calculatorHandler } from '@/utils/command/command'
 import { 
   setDisplay, 
   clearLastNumber, 
@@ -10,6 +10,7 @@ import {
   calculate,
   clearError
 } from '@/store/slice/calculatorSlice'
+
 
 const btn = [
   'C', 7, 8, 9, '*', 
@@ -22,6 +23,7 @@ const KeypadFC = () => {
   const dispatch = useDispatch();
 
   const handleClick = (v) => () => {
+    // calculatorHandler(v); example of implementation through a pattern Command
     dispatch(clearError())
       switch (v) {
         case '=':

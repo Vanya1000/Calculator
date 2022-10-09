@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+
 import * as Styled from './styled'
+import { commandHandler } from '@/utils/command/command'
 import { 
   setDisplay, 
   clearLastNumber, 
@@ -20,6 +22,7 @@ const btn = [
 class KeypadCC extends React.Component {
 
   handleClick = (v) => () => {
+    // commandHandler(v); example of implementation through a pattern Command
     this.props.clearError();
     switch (v) {
       case '=':
